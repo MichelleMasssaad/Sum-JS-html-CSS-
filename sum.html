@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Sum</title>
+  <style>
+    body {
+      background-color:#f897d0;
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input {
+      color: #3de2f1;
+      width: 60px;
+      padding: 10px;
+      font-size: 18px;
+      margin: 5px;
+    }
+
+    button {
+      color: #5d1085;
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    #result {
+      color: #5232f9;
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+   
+  <h1 style= "color:#800251;">Enter 5 Numbers</h1>
+
+  <input type="number" id="num1"><br>
+  <input type="number" id="num2"><br>
+  <input type="number" id="num3"><br>
+  <input type="number" id="num4"><br>
+  <input type="number" id="num5"><br>
+
+  <button onclick="calculateSum()">Start</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateSum() {
+      let inputs = [
+        document.getElementById("num1").value,
+        document.getElementById("num2").value,
+        document.getElementById("num3").value,
+        document.getElementById("num4").value,
+        document.getElementById("num5").value
+      ];
+
+      let total = 0;
+
+      for (let i = 0; i < inputs.length; i++) {
+        let value = parseFloat(inputs[i]);
+  
+        if (isNaN(value)) {
+          alert("Please enter numbers only in box " + (i + 1));
+          return;
+        }
+    
+
+        total += value;
+      }
+
+      document.getElementById("result").textContent = "Sum: " + total;
+    }
+  </script>
+
+</body>
+</html>
